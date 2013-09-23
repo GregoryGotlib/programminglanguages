@@ -1,3 +1,4 @@
+;;prog
 (define replace 
 	(lambda (source target replacement) 
 		(cond 
@@ -11,6 +12,7 @@
 	)
 )
 
+;;tests
 (replace 'x 'x 'y)
 (replace 1111 2222 2222)
 (replace 'string 'string 'there-are-no-strings)
