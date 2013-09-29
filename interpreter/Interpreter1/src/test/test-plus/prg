@@ -1,0 +1,6 @@
+x=1+2;
+"#this is a comment\n#"one=1; two=2; 
+"#this is a comment\n#" one=1; two=2; 
+"one#this is a comment\n#=1;"
+"one=1;#this is a comment\n#"
+"one=#this is a comment\n#1;"
