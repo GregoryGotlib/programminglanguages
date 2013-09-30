@@ -72,12 +72,17 @@ public class Parser
 		return null;
 	}
 	
-	private NodeNum parseDigit()
+	private NodeNum parseDigit() throws SyntaxException
 	{
 		String lex = curr().lex();
 		if (lex.contains("-"))
 		{
-			return new NodeNum(lex.substring(lex.indexOf("-")+1), "-");
+			match("-");
+			if (curr().lex().equals("("))
+			{
+				
+			}
+			return new NodeNum(curr().lex(), "-");
 		}
 		else
 		{

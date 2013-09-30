@@ -1,7 +1,8 @@
 
 import java.util.*;
 
-public class Scanner
+
+	public class Scanner
 {
 
 	private String program;
@@ -141,7 +142,7 @@ public class Scanner
 	{
 		int old = pos;
 		many(digits);
-		token = new Token("num", program.substring(old, pos));
+		token = new Token("digit", program.substring(old, pos));
 	}
 
 	/**
@@ -208,6 +209,24 @@ public class Scanner
 		many(digits);
 		token = new Token("digit", program.substring(old, pos));
 	}
+	
+	private boolean isUnaryMinus()
+	{
+		String next = nextNonWhitespaceChar();
+		if (next.equals("(") || next.equals("+") || digits.contains(next))
+			return true;
+		return false;
+	}
+	
+	private String nextNonWhitespaceChar()
+	{
+		int i = 1;
+		while (whitespace.contains(program.charAt(pos+i) + ""))
+		{
+			++i;
+		}
+		return program.charAt(pos+i) + "";
+	}
 
 	/**
 	 * This function scans through each character in the input program and classifies it accordingly
@@ -229,10 +248,20 @@ public class Scanner
 		{
 			nextKwId();
 		}
-		else if (operators.contains(c) && c.equals("-"))
-		{
-			negateDigit();
-		}
+//		else if (operators.contains(c) && c.equals("-") && isUnaryMinus())
+//		{
+//			//if a minus is detected after a number, change it to a plus and negate the following digit
+//			//if a minus is detected before a number and no number follows it, simply negate it
+//			//e.g. -1+1 => scan the -1, negate it and add it to 1 = 0
+//			// 1- -1 => scan the 1, scan the -, insert a plus, negate the next digit which is -1 => 1+1=2
+//			// -1- -1 => scan the -, negate the 1, scan the -, insert a plus, negate the next digit which is -1 so its -1+1 = 0
+//			// -1 + -1 => scan the -, negate the 1, scan the plus, scan the -, negate the 1 => -1 + -1 = -2
+//			// 1 + -1 => scan the 1, scan the plus, scan the -, negate the one => 1 + -1 = 0
+//			
+//			//already scanned -1 then an actual - indicating subtraction shows up and this case becomes true 
+//			//what distinguishes a unary minus from another minus; if the next non whitespace char is a digit
+//			negateDigit();
+//		}
 		else if (operators.contains(c))
 		{
 			nextOp();
@@ -249,8 +278,7 @@ public class Scanner
 		}
 		return true;
 	}
-
-	/**
+/**
 	 * Matches the current token that is being parsed and then prepares the next token to operate on
 	 * @param t
 	 * @throws SyntaxException 

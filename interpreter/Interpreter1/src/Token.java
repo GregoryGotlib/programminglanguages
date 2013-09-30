@@ -4,6 +4,7 @@ public class Token
 
 	private String token;
 	private String lexeme;
+	private boolean negateNext;
 
 	public Token(String token, String lexeme)
 	{
