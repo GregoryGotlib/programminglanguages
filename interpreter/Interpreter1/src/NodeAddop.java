@@ -21,7 +21,7 @@ public class NodeAddop extends Node
 	 * @return - the sum or difference of the numbers
 	 * @throws EvalException 
 	 */
-	public int op(int o1, int o2) throws EvalException
+	public double op(double o1, double o2) throws EvalException
 	{
 		if (addop.equals("+"))
 		{

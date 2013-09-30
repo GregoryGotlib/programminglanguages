@@ -10,7 +10,7 @@ public class Environment {
 	 * @param val - it's value
 	 * @return - ?
 	 */
-    public int put(String var, int val) { return val; }
+    public double put(String var, double val) { return val; }
 	/**
 	 * Gets a variable from the environment
 	 * @param pos - the position of the scanner/parser where the variable should be

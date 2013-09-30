@@ -47,7 +47,7 @@ public class NodeExpr extends Node
 	 * @return - either the value of the term or the value of whatever may be contained in it: an id, number or expression 
 	 * @throws EvalException 
 	 */
-	public int eval(Environment env) throws EvalException
+	public double eval(Environment env) throws EvalException
 	{
 		return expr == null
 				? term.eval(env)

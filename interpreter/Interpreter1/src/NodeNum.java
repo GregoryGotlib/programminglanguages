@@ -12,9 +12,8 @@ public class NodeNum extends Node
 		this.sign=sign;
 	}
 	
-	@Override
-	public int eval(Environment env) throws EvalException
+	public double eval(Environment env) throws EvalException
 	{
-		return Integer.parseInt(sign == null ? digit : sign+digit);
+		return Double.parseDouble(sign == null ? digit : sign+digit);
 	}
 }

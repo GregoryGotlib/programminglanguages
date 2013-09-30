@@ -26,7 +26,7 @@ public class NodeAssn extends Node
 	 * @return - perhaps some kind of id from the environment
 	 * @throws EvalException 
 	 */
-	public int eval(Environment env) throws EvalException
+	public double eval(Environment env) throws EvalException
 	{
 		return env.put(id, expr.eval(env));
 	}

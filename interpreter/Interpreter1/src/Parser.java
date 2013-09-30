@@ -78,10 +78,6 @@ public class Parser
 		if (lex.contains("-"))
 		{
 			match("-");
-			if (curr().lex().equals("("))
-			{
-				
-			}
 			return new NodeNum(curr().lex(), "-");
 		}
 		else
