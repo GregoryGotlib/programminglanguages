@@ -5,6 +5,7 @@
 public class NodeFactExpr extends NodeFact {
 
     private NodeExpr expr;
+	private NodeUnary unary;
 
 	/**
 	 * Constructs a fact containing an expression
@@ -14,6 +15,12 @@ public class NodeFactExpr extends NodeFact {
 	this.expr=expr;
     }
 
+	public NodeFactExpr(NodeExpr expr, NodeUnary unary)
+	{
+		this.expr=expr;
+		this.unary=unary;
+	}
+
 	/**
 	 * Evaluates the fact expression in the same way typical expressions are evaluated
 	 * @param env - the environment that is being operated on
@@ -21,7 +28,7 @@ public class NodeFactExpr extends NodeFact {
 	 * @throws EvalException 
 	 */
     public double eval(Environment env) throws EvalException {
-	return expr.eval(env);
+		return unary == null? expr.eval(env) : -1*expr.eval(env);
     }
 
 }

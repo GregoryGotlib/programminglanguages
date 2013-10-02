@@ -72,18 +72,29 @@ public class Parser
 		return null;
 	}
 	
+	private NodeUnary parseUnary() throws SyntaxException
+	{
+		int i = 1;
+		while (curr().lex().equals("-") || curr().lex().equals("+"))
+		{
+			if (curr().lex().equals("-"))
+			{
+				i*=-1;
+				match("-");
+			}
+			else
+			{
+				match("+");
+			}
+				
+		}
+		return i == -1 ? new NodeUnary("-") : null;
+	}
+	
 	private NodeNum parseDigit() throws SyntaxException
 	{
 		String lex = curr().lex();
-		if (lex.contains("-"))
-		{
-			match("-");
-			return new NodeNum(curr().lex(), "-");
-		}
-		else
-		{
-			return new NodeNum(lex, null);
-		}
+		return new NodeNum(lex);
 	}
 
 	/**
@@ -93,20 +104,23 @@ public class Parser
 	 */
 	private NodeFact parseFact() throws SyntaxException
 	{
+		NodeUnary unary = parseUnary();
 		if (curr().equals(new Token("(")))
 		{
 			match("(");
 			NodeExpr expr = parseExpr();
 			match(")");
-			return new NodeFactExpr(expr);
+			return new NodeFactExpr(expr, unary);
 		}
 		if (curr().equals(new Token("id")))
 		{
 			Token id = curr();
 			match("id");
-			return new NodeFactId(pos(), id.lex());
+			NodeFactId factId = new NodeFactId(pos(), id.lex(), unary);
+			return factId;
 		}
 		NodeNum node = parseDigit();
+		node.setUnary(unary);
 		match("digit");
 		return new NodeFactNum(node);
 	}

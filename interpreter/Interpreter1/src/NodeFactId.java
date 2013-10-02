@@ -5,6 +5,7 @@
 public class NodeFactId extends NodeFact {
 
     private String id;
+	private NodeUnary unary;
 
 	/**
 	 * Constructs a fact containing an id 
@@ -16,6 +17,13 @@ public class NodeFactId extends NodeFact {
 	this.id=id;
     }
 
+	public NodeFactId(int pos, String id, NodeUnary unary)
+	{
+		this.pos = pos;
+		this.id = id;
+		this.unary=unary;
+	}
+
 	/**
 	 * Evaluates the fact id by getting its position from the environment
 	 * @param env - the environment to find the id in 
@@ -23,7 +31,7 @@ public class NodeFactId extends NodeFact {
 	 * @throws EvalException 
 	 */
     public double eval(Environment env) throws EvalException {
-	return env.get(pos,id);
+	return unary == null ? env.get(pos,id) : -1*env.get(pos,id);
     }
 
 }

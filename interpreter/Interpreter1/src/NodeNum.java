@@ -4,16 +4,20 @@
 public class NodeNum extends Node
 {
 	private String digit;
-	private String sign;
+	NodeUnary unary;
 	
-	public NodeNum(String digit, String sign)
+	public NodeNum(String digit)
 	{
 		this.digit=digit;
-		this.sign=sign;
 	}
 	
 	public double eval(Environment env) throws EvalException
 	{
-		return Double.parseDouble(sign == null ? digit : sign+digit);
+		return Double.parseDouble(unary == null ? digit : "-"+digit);
+	}
+
+	public void setUnary(NodeUnary unary)
+	{
+		this.unary=unary;
 	}
 }
