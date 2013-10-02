@@ -10,12 +10,6 @@ public class NodeExpr extends Node
 	private NodeAddop addop;
 	private NodeExpr expr;
 
-	/**
-	 * Constructs an expression node with the given term, addop and expr. The given expr and addop can be null.
-	 * @param term
-	 * @param addop
-	 * @param expr 
-	 */
 	public NodeExpr(NodeTerm term, NodeAddop addop, NodeExpr expr)
 	{
 		this.term = term;

@@ -7,11 +7,6 @@ public class NodeFactId extends NodeFact {
     private String id;
 	private NodeUnary unary;
 
-	/**
-	 * Constructs a fact containing an id 
-	 * @param pos - the position of the scanner/parser when it was found
-	 * @param id - the identifier 
-	 */
     public NodeFactId(int pos, String id) {
 	this.pos=pos;
 	this.id=id;

@@ -1,5 +1,5 @@
 /**
- *
+ * Node containing a unary value, this node only needs to be constructed if there is a unary minus involved, unary plus handled via null
  * @author reuben
  */
 public class NodeUnary extends Node
@@ -11,6 +11,12 @@ public class NodeUnary extends Node
 		this.unaryMinus = unaryMinus;
 	}
 
+	/**
+	 * Simply for the abstract implementation's sake
+	 * @param env
+	 * @return
+	 * @throws EvalException 
+	 */
 	@Override
 	public double eval(Environment env) throws EvalException
 	{

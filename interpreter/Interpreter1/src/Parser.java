@@ -1,5 +1,8 @@
 
-
+/**
+ * The workhorse of our interpreter that combines scanned lexemes into the framework of our grammar
+ * @author reuben
+ */
 public class Parser
 {
 
@@ -72,6 +75,11 @@ public class Parser
 		return null;
 	}
 	
+	/**
+	 * Parses any number of consecutive unary + or -
+	 * @return a NodeUnary that contains the result one or many unary + or -s
+	 * @throws SyntaxException 
+	 */
 	private NodeUnary parseUnary() throws SyntaxException
 	{
 		int i = 1;
@@ -91,6 +99,11 @@ public class Parser
 		return i == -1 ? new NodeUnary("-") : null;
 	}
 	
+	/**
+	 * Parses a digit
+	 * @return a NodeNum with the parsed digit
+	 * @throws SyntaxException 
+	 */
 	private NodeNum parseDigit() throws SyntaxException
 	{
 		String lex = curr().lex();

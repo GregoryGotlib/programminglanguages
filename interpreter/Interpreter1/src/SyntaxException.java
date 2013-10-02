@@ -1,5 +1,8 @@
+/**
+ * Special exception when sytnax issues are found
+ * @author reuben
+ */
 public class SyntaxException extends Exception {
-
     private int pos;
     private Token expected;
     private Token found;

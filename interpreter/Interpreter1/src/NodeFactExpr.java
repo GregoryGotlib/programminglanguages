@@ -7,10 +7,6 @@ public class NodeFactExpr extends NodeFact {
     private NodeExpr expr;
 	private NodeUnary unary;
 
-	/**
-	 * Constructs a fact containing an expression
-	 * @param expr - the expression contained in the fact (should have been found in parens)
-	 */
     public NodeFactExpr(NodeExpr expr) {
 	this.expr=expr;
     }

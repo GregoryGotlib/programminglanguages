@@ -9,11 +9,6 @@ public class NodeAssn extends Node
 	private String id;
 	private NodeExpr expr;
 
-	/**
-	 * Constructs an assignment node with the given identifier and expression
-	 * @param id - the identifier to assign an value to
-	 * @param expr - the value in the form of an expression
-	 */
 	public NodeAssn(String id, NodeExpr expr)
 	{
 		this.id = id;

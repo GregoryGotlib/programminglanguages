@@ -5,13 +5,8 @@
  */
 public class NodeStmt extends Node
 {
-
 	private NodeAssn assn;
-
-	/**
-	 * Constructs a statement node with the given assignment
-	 * @param assn 
-	 */
+	
 	public NodeStmt(NodeAssn assn)
 	{
 		this.assn = assn;

@@ -1,8 +1,7 @@
 
 import java.util.*;
 
-
-	public class Scanner
+public class Scanner
 {
 
 	private String program;
@@ -124,6 +123,10 @@ import java.util.*;
 		}
 	}
 
+	/**
+	 * Determines whether we have gone past a char
+	 * @param c - the char to check if we have passed
+	 */
 	private void past(char c)
 	{
 		while (!done() && c != program.charAt(pos))
@@ -180,6 +183,9 @@ import java.util.*;
 		token = new Token(lexeme);
 	}
 
+	/**
+	 * Passes over any comments of the form "#...#"
+	 */
 	private void ignoreComments()
 	{
 		++pos;
@@ -198,6 +204,10 @@ import java.util.*;
 		}
 	}
 
+	/**
+	 * Gives the parser access to know whether a program was simply comments or had meaningful tokens
+	 * @return - true if there were no tokens, false if there was
+	 */
 	boolean getNoTokensFound()
 	{
 		return this.noTokensFound;
@@ -239,7 +249,8 @@ import java.util.*;
 		}
 		return true;
 	}
-/**
+
+	/**
 	 * Matches the current token that is being parsed and then prepares the next token to operate on
 	 * @param t
 	 * @throws SyntaxException 
