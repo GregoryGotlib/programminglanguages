@@ -21,7 +21,7 @@ Object subclass: Bank [
 
     asString [
         |s| s:=''.
-        accounts do: [:each | s := s,' ', each asString].
+        accounts do: [:each | s := s, (Character nl asString) , each asString].
         ^s
     ]
 ]
