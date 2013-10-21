@@ -1,0 +1,9 @@
+#!/bin/bash -x
+
+export PATH=/usr/bin:/bin
+
+gplc meetone.pl
+gplc meet.pl
+
+./meetone
+./meet
