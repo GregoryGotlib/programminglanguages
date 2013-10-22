@@ -1,0 +1,32 @@
+Grammar:
+
+    expr    -> expr add_op term
+	     | term
+
+    term    -> term mult_op factor
+	     | factor
+
+    factor  -> id
+	     | number
+	     | '-' factor
+	     | '(' expr ')'
+
+    add_op  -> '+'
+	     | '-'
+
+    mult_op -> '*'
+	     | '/'
+
+Derivation of 3+4*5:
+
+    expr => expr add_op term
+	 => term add_op term
+	 => factor add_op term
+	 => number add_op term
+	 => number '+' term
+	 => number '+' term mult_op factor
+	 => number '+' factor mult_op factor
+	 => number '+' number mult_op factor
+	 => number '+' number '*' factor
+	 => number '+' number '*' number
+

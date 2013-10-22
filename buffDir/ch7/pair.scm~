@@ -1,0 +1,10 @@
+; sscm pair.scm
+
+(define (proper? list)
+  (cond ((nullp list) #t)
+	 (atom? (car list) (proper? (cdr list)))
+	 (else (and (proper? (car list))
+		    (proper? (cdr list))))))
+
+(display list)
+(display "\n")
