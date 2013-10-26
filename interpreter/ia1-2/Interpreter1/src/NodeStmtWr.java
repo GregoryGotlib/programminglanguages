@@ -1,5 +1,5 @@
 /**
- *
+ * A node for a write statement
  * @author reuben
  */
 public class NodeStmtWr extends NodeStmt {
@@ -11,7 +11,7 @@ public class NodeStmtWr extends NodeStmt {
     }
     
     /**
-     * Evaluates the read statement. The read only accepts double values into the variable.
+     * Evaluates the write statement. 
      *
      * @param env - the environment which contains the variables being operated on
      * @return - previous value of variable being read, returns 0 if variable is new

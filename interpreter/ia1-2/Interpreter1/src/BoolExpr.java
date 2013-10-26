@@ -1,5 +1,5 @@
 /**
- *
+ * A node for boolean expressions
  * @author reuben
  */
 public class BoolExpr {
@@ -14,6 +14,12 @@ public class BoolExpr {
         this.rhs = rhs;
     }
     
+    /**
+     * Evaluates the boolean expression 
+     * @param env
+     * @return - a boolean value
+     * @throws EvalException 
+     */
     public boolean eval(Environment env) throws EvalException
     {
         double rightHandVal = rhs.eval(env);

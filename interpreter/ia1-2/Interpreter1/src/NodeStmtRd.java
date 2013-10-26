@@ -2,7 +2,7 @@
 import java.util.Scanner;
 
 /**
- *
+ * A node for a read statement
  * @author reuben
  */
 public class NodeStmtRd extends NodeStmt {

@@ -1,5 +1,5 @@
 /**
- *
+ * A node for if then else statements
  * @author reuben
  */
 public class NodeStmtIfThenElse extends NodeStmt {
@@ -14,6 +14,12 @@ public class NodeStmtIfThenElse extends NodeStmt {
         this.elseStmt = elseStmt;
     }
     
+    /**
+     * Evaluates the if then else statement
+     * @param env
+     * @return the evaluation of either the if or the else
+     * @throws EvalException 
+     */
     public Double eval(Environment env) throws EvalException
     {
         if (bexpr.eval(env))
