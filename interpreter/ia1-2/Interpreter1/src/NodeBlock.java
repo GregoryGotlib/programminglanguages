@@ -3,29 +3,20 @@ import java.util.LinkedList;
 import java.util.List;
 
 /**
- *
+ * A node representing a block which contains a series of ; separated statements followed by a non ; terminated statement
  * @author reuben
  */
-class NodeBlock extends Node {
+class NodeBlock extends NodeStmt {
     List<NodeStmt> statements = new LinkedList<NodeStmt>();
     
     public NodeBlock(List<NodeStmt> statements)
     {
         this.statements = statements;
     }
-    public NodeBlock()
-    {
-    }
-    
-    public void addStatement(NodeStmt statement)
-    {
-        statements.add(statement);
-    }
     
     /**
-     * Evaluates the contained assignment
+     * Evaluates the contain statements sequentially
      * @param env - the environment which contains the variables being operated on
-     * @return - perhaps some kind of id from the environment
      * @throws EvalException 
      */
     public Double eval(Environment env) throws EvalException

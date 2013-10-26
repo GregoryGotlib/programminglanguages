@@ -7,12 +7,10 @@ import java.util.List;
  * The workhorse of our interpreter that combines scanned lexemes into the
  * framework of our grammar
  *
- * @author reuben
+ * @author buff/reuben
  */
 public class Parser {
-    private final boolean TERMINATED = true;
-    private final boolean NOT_TERMINATED = false;
-    
+   
     private Scanner scanner;
 
     /**
@@ -221,7 +219,7 @@ public class Parser {
     }
 
     /**
-     * Parses a statement
+     * Parses a statement which can be several different constructs of the language
      *
      * @return - a statement node
      * @throws SyntaxException
@@ -248,47 +246,56 @@ public class Parser {
                 BoolExpr bexpr = parseBoolExpr();
                 match("then");
                 NodeStmt ifThenStmt = parseStmt();
-                stmt = new NodeStmtIfThen(bexpr, ifThenStmt);
+                if (curr().lex().equals("else"))
+                {
+                    match("else");
+                    NodeStmt elseStmt = parseStmt();
+                    return new NodeStmtIfThenElse(bexpr, ifThenStmt, elseStmt);
+                }
+                else
+                {    
+                    stmt = new NodeStmtIfThen(bexpr, ifThenStmt);
+                }
                 break;
             case "begin":
+                match("begin");
+                stmt = parseBlock();
+                match("end");
                 break;
             case "while":
+                match("while");
+                BoolExpr whileBexpr = parseBoolExpr();
+                match("do");
+                NodeStmt whileStmt = parseStmt();
+                stmt = new NodeStmtWhile(whileBexpr, whileStmt);
                 break;
             default:
                 NodeAssn assn = parseAssn();
                 stmt = new NodeStmtAssn(assn);
                 break;
         }
-
-        /**
-         * NOTE: THIS DOES NOT PROVIDE INTENDED FUNCTIONALITY; THE NON-TERMINATED STATEMENT IS SUPPOSED TO BE THE FINAL STATEMENT OF A BLOCK 
-         * i.e. THERE SHOULD BE AN ERROR IF THERE IS A STATEMENT AFTER IT, RIGHT NOW IT JUST TERMINATES THE BLOCK
-         */
-        
-        if (curr().equals(new Token(";")))
-        {
-            match(";");
-            stmt.setTerminated(TERMINATED);
-        }
-        else
-        {
-            stmt.setTerminated(NOT_TERMINATED);
-        }
         return stmt;
     }
-    
     
     private NodeBlock parseBlock() throws SyntaxException
     {
         List<NodeStmt> statements = new LinkedList<>();
         NodeStmt statement;
-        do
+        while(true)
         {
             statement = parseStmt();
             statements.add(statement);
+            
+            if (curr().equals(new Token(";")))
+            {
+                match(";");
+            }
+            else
+            {
+                break;
+            }
         }
-        while (statement.isTerminated());
-        
+      
         return new NodeBlock(statements);
     }
 

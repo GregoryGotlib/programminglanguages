@@ -1,7 +1,6 @@
 
 /**
- * A node containing the stmt terminal of the grammar, statements contain
- * assignments.
+ * A node containing the assignment terminal inside of a statement of the grammar
  *
  * @author buff
  */
