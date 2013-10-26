@@ -12,7 +12,7 @@ public abstract class Node {
 	 * @return - the value of the evaluation, a double in our math language
 	 * @throws EvalException 
 	 */
-    public double eval(Environment env) throws EvalException {
+    public Double eval(Environment env) throws EvalException {
 	throw new EvalException(pos,"cannot eval() node!");
     }
 }

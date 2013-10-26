@@ -1,0 +1,49 @@
+"begin	that = 64; this = 2; while this != that do begin 2*2 end end"
+
+"begin if this == that then begin if that <> another then wr stuff; rd readstuff end end"
+
+"if this == that then begin if that <> another then wr stuff end"
+
+"variable = 25; if variable == 25 then begin rd factor; product = factor * variable; end"
+
+"variable = 25; if variable == 25 then begin rd factor; product = factor * variable; end else wr done;"
+
+"that = 64; this = 2;while this != that do begin this = this*2; end wr 1.0"
+
+"this = 2; that = 1; if this == that then wr 1.0 else wr 0.0"
+
+"if 2*5+3 == 10/2*2+3 then wr 1.0"
+
+"this = 2; that = 2; if this <> that then wr 1.0"
+
+"this = 2; that = 2; if this > that then wr 1.0"
+
+"this = 2; that = 2; if this < that then wr 1.0"
+
+"this = 2; that = 1; if this == that then wr 1.0"
+
+"this = 3; that = 2; if this <= that then wr 1.0"
+
+"this = 2;that = 3; if this >= that then	wr 1.0"
+
+"this = 2; that = 2; if this == that then wr 1.0"
+
+"this = 2; that = 2; if this >= that then wr 1.0"
+
+"this = 2; that = 2; if this <= that then wr 1.0"
+
+"this = 2; that = 1; if this <> that then wr 1.0"
+
+"this = 3; that = 2; if this > that then wr 1.0"
+
+"this = 2;that = 3; if this < that then	wr 1.0"
+
+"rd read; wr read"
+
+"rd garbage"
+
+"wr 1.0"
+
+"rd read"
+
+"a = 1; b = 2;c = 3"

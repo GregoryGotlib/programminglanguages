@@ -18,7 +18,7 @@ public class NodeUnary extends Node
 	 * @throws EvalException 
 	 */
 	@Override
-	public double eval(Environment env) throws EvalException
+	public Double eval(Environment env) throws EvalException
 	{
 		return env.put(unaryMinus, pos);
 	}

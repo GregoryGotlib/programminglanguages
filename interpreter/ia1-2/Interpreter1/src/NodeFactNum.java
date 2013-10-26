@@ -19,7 +19,7 @@ public class NodeFactNum extends NodeFact
 	 * @return
 	 * @throws EvalException 
 	 */
-	public double eval(Environment env) throws EvalException
+	public Double eval(Environment env) throws EvalException
 	{
 		return num.eval(env);
 	}

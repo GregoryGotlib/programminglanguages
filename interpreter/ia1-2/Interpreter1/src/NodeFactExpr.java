@@ -23,7 +23,7 @@ public class NodeFactExpr extends NodeFact {
 	 * @return - either the value of the term or the value of whatever may be contained in it: an id, number or expression 
 	 * @throws EvalException 
 	 */
-    public double eval(Environment env) throws EvalException {
+    public Double eval(Environment env) throws EvalException {
 		return unary == null? expr.eval(env) : -1*expr.eval(env);
     }
 

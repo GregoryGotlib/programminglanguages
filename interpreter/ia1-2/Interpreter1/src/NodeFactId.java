@@ -25,7 +25,7 @@ public class NodeFactId extends NodeFact {
 	 * @return - the id from the environment
 	 * @throws EvalException 
 	 */
-    public double eval(Environment env) throws EvalException {
+    public Double eval(Environment env) throws EvalException {
 	return unary == null ? env.get(pos,id) : -1*env.get(pos,id);
     }
 

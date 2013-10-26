@@ -19,7 +19,7 @@ public class NodeNum extends Node
 	 * @throws EvalException 
 	 */
 	@Override
-	public double eval(Environment env) throws EvalException
+	public Double eval(Environment env) throws EvalException
 	{
 		return Double.parseDouble(unary == null ? digit : "-"+digit);
 	}
