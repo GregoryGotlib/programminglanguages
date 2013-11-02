@@ -649,12 +649,14 @@ a:focus {
 }
 
 p {
-  margin: 0 0 10px;
+  margin: 0 0 20px;
+  font-size: 18px;
+  line-height: 25px;
 }
 
 .lead {
   margin-bottom: 20px;
-  font-size: 21px;
+  font-size: 25px;
   font-weight: 200;
   line-height: 30px;
 }
@@ -764,7 +766,8 @@ h3 {
 }
 
 h1 {
-  font-size: 38.5px;
+  font-size: 50px;
+  margin: 0 0 25px;
 }
 
 h2 {

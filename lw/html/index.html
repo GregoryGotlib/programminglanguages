@@ -268,10 +268,6 @@
 
   <body>
 
-
-
-    <!-- NAVBAR
-    ================================================== -->
     <div class="navbar-wrapper">
       <!-- Wrap the .navbar in .container to center it within the absolutely positioned parent. -->
       <div class="container">
@@ -286,12 +282,14 @@
             </button>
             <a class="brand" href="#">Team Cod &middot; Scala</a>
             <!-- Responsive Navbar Part 2: Place all navbar contents you want collapsed withing .navbar-collapse.collapse. -->
+            <div class="nav-collapse collapse">
 
+            </div><!--/.nav-collapse -->
+          </div><!-- /.navbar-inner -->
         </div><!-- /.navbar -->
 
       </div> <!-- /.container -->
     </div><!-- /.navbar-wrapper -->
-
 
 
     <!-- Carousel
@@ -342,7 +340,7 @@
       <div class="row-fluid">
         <div class="span4 offset1">
           <img class="img-circle" src="./assets/img/cod1.jpg">
-          <h2>Reuben</h2>
+          <a href="./pages/reuben.html"><h2>Reuben</h2></a>
           <ul class="nav nav-list">
             <li>Syntax</li>
             <li>Model of Computation</li> 
@@ -352,7 +350,7 @@
         </div><!-- /.span4 -->
         <div class="span4 offset1">
           <img class="img-circle" src="./assets/img/cod2.jpg">
-          <h2>Jason</h2>
+          <a href="./pages/jason.html"><h2>Jason</h2></a>
           <ul class="nav nav-list">
             <li>Data Types</li>
             <li>First Class Functions</li> 
@@ -363,7 +361,7 @@
       <div class="row">
         <div class="span4 offset1" style="padding-top:.8cm;">
           <img class="img-circle" src="./assets/img/cod3.jpg">
-          <h2>Anh</h2>
+          <a href="./pages/anh.html"><h2>Anh</h2></a>
           <ul class="nav nav-list">
             <li>Typing</li>
             <li>Casting</li> 
@@ -372,7 +370,7 @@
         </div><!-- /.span4 -->
         <div class="span4 offset1">
           <img class="img-circle" src="./assets/img/cod4.jpg">
-          <h2>Aniket</h2>
+          <a href="./pages/aniket.html"><h2>Aniket</h2></a>
           <ul class="nav nav-list">
             <li>Equivalence</li>
             <li>Control Flow</li> 
@@ -382,7 +380,8 @@
       </div>
 
       <!-- FOOTER -->
-      <footer>
+
+      <footer style="padding-top:2cm;">
         <p class="pull-right"><a href="#">Back to top</a></p>
         <p>&copy; 2013 Team Cod </a></p>
       </footer>
