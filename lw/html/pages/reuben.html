@@ -39,13 +39,21 @@
     <div class="container">
       <div class="well well-large">
       <div class="row-fluid ">
-        <h1>Subheading 1</h1>
-        <p class="lead">Donec sed odio dui.. Etiam porta sem malesuada magna mollis euismod.. Nullam id dolor id nibh ultricies vehicula ut id elit.. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.. Praesent commodo cursus magna, vel scelerisque nisl consectetur et..</p>
+        <h1>Model of Computation</h1>
+        <p class="lead">Scala is an elegant, multi-paradigm language combining the functional and imperative models of computing seamlessly.</p>
         <ul>
-          <li><p>Donec sed odio dui.. Etiam porta sem malesuada magna mollis euismod.. Nullam id dolor id nibh ultricies vehicula ut id elit.. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.. Praesent commodo cursus magna, vel scelerisque nisl consectetur et..</p></li>
-          <li><p>Donec sed odio dui.. Etiam porta sem malesuada magna mollis euismod.. Nullam id dolor id nibh ultricies vehicula ut id elit.. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.. Praesent commodo cursus magna, vel scelerisque nisl consectetur et..</p></li>
-          <li><p>Donec sed odio dui.. Etiam porta sem malesuada magna mollis euismod.. Nullam id dolor id nibh ultricies vehicula ut id elit.. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.. Praesent commodo cursus magna, vel scelerisque nisl consectetur et..</p></li>
-          <li><p>Donec sed odio dui.. Etiam porta sem malesuada magna mollis euismod.. Nullam id dolor id nibh ultricies vehicula ut id elit.. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.. Praesent commodo cursus magna, vel scelerisque nisl consectetur et..</p></li>
+          <li><p>
+            Many languages nowaways are object oriented <em>in a sense of the defintion</em>. Take Java for instance, Java is object oriented in that it has a paradigm in the language where the programmer can define an object that contains fields and methods but it is not <em>purely</em> object oriented in that it distinguishes primitive values such as int, boolean and double apart from their object forms Integer, Boolean and Double and that it has static variables that are not truly the members of a single object. Scala, on the other hand, is purely object oriented rivaling even Smalltalk. In Scala, even numbers are objects so the statement <code>var = 1 + 2</code> is really the object <code>1</code> of class <code>Int</code> calling its method <code>+</code> and passing it an object <code>2</code>. The designers of Scala allow the programmer to define methods in objects with the names of operators like !, ^, @ which can be called using infix notation like <code>requester ! sum</code>.
+          </p></li>
+          <li><p>
+            One of the cooler things about Scala is that it brings the advantages of functional programming into the object oriented arena that many developers are already familiar with, making functional programming a viable option for production code in industry. Big name companies that have recognized this and begun to utilize Scala in their businesses are names that you are most certainly familiar with: Twitter, LinkedIn and Intel to name a few.   
+          </p></li>
+          <li><p>
+            Another functional aspect of Scala is that it allows the programmer to decide whether they want to write a function to be imperative (producing side effects) or to be functional (producing no side effects). Just as Java's <code>String</code>'s are immutable and string manipulation could be considered functional in that there are no side effects on the original string, Scala implements many data types that are immutable, providing this same functionality to objects like lists, tuples, maps and sets.
+          </p></li>
+          <li><p>
+            Donec sed odio dui.. Etiam porta sem malesuada magna mollis euismod.. Nullam id dolor id nibh ultricies vehicula ut id elit.. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.. Praesent commodo cursus magna, vel scelerisque nisl consectetur et..
+          </p></li>
         </ul>
         <p>Donec sed odio dui.. Etiam porta sem malesuada magna mollis euismod.. Nullam id dolor id nibh ultricies vehicula ut id elit.. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.. Praesent commodo cursus magna, vel scelerisque nisl consectetur et..</p>
       </div>
@@ -53,7 +61,7 @@
       
     <div class="well well-large">
       <div class="row-fluid">
-        <h1>Subheading 2</h1>
+        <h1>Syntax</h1>
         <p class="lead">Donec sed odio dui.. Etiam porta sem malesuada magna mollis euismod.. Nullam id dolor id nibh ultricies vehicula ut id elit.. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.. Praesent commodo cursus magna, vel scelerisque nisl consectetur et..</p>
         <ul>
           <li><p>Donec sed odio dui.. Etiam porta sem malesuada magna mollis euismod.. Nullam id dolor id nibh ultricies vehicula ut id elit.. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.. Praesent commodo cursus magna, vel scelerisque nisl consectetur et..</p></li>
@@ -67,11 +75,64 @@
 
     <div class="well well-large">
       <div class="row-fluid">
-        <h1>Subheading 3</h1>
-        <p class="lead">Donec sed odio dui.. Etiam porta sem malesuada magna mollis euismod.. Nullam id dolor id nibh ultricies vehicula ut id elit.. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.. Praesent commodo cursus magna, vel scelerisque nisl consectetur et..</p>
+        <h1>Polymorphism</h1>
+        <p class="lead">Scala's designers took quite a bit of time developing their object orientation and inheritance paradigms and the power that they give the programmer is quite immense. Notions that can be valuable but have significant drawbacks, like multiple inheritance, are implemented in Scala in a way that prevents the horrors of their predecessors.</p>
         <ul>
+          <li><p>Instead of interfaces and abstract classes, Scala uses the notion of <code>Traits</code>. A trait is similar to an abstract class in that it allows the definition of unimplemented or fully implemented methods along fields. When objects are created, the different traits that it posses are combined using what the Scala designers call "mixin composition" which takes the members of a class and adds the members of its traits to it.</p></li>
           <li><p>Donec sed odio dui.. Etiam porta sem malesuada magna mollis euismod.. Nullam id dolor id nibh ultricies vehicula ut id elit.. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.. Praesent commodo cursus magna, vel scelerisque nisl consectetur et..</p></li>
           <li><p>Donec sed odio dui.. Etiam porta sem malesuada magna mollis euismod.. Nullam id dolor id nibh ultricies vehicula ut id elit.. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.. Praesent commodo cursus magna, vel scelerisque nisl consectetur et..</p></li>
+          <li><p>Donec sed odio dui.. Etiam porta sem malesuada magna mollis euismod.. Nullam id dolor id nibh ultricies vehicula ut id elit.. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.. Praesent commodo cursus magna, vel scelerisque nisl consectetur et..</p></li>
+        </ul>
+        <p>Donec sed odio dui.. Etiam porta sem malesuada magna mollis euismod.. Nullam id dolor id nibh ultricies vehicula ut id elit.. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.. Praesent commodo cursus magna, vel scelerisque nisl consectetur et..</p>
+      </div>
+    </div>
+
+    <div class="well well-large">
+      <div class="row-fluid">
+        <h1>Nifty features</h1>
+        <p class="lead">Many languages are overly verbose whereas some are confusingly terse, Scala seems to find a good middle ground, offering some powerful one liners but still allowing their terser versions to be used.</p>
+        <ul>
+          <li><p>Let's take a simple example of searching a string for an uppercase character. In Java, the code would look like this:
+
+            <pre>
+              <code>
+              boolean nameHasUpperCase = false;
+              for (int i = 0; i < name.length(); ++i) {
+                if (Character.isUpperCase(name.charAt(i))) {
+                  nameHasUpperCase = true;
+                  break;
+                }
+              }
+              </code>
+            </pre>
+          <p>In Scala, this for loop can be reduced to </p>
+          <pre>
+            <code>
+              val nameHasUpperCase = name.exists(_.isUpper)
+            </code>
+          </pre>
+          </p></li>
+          <li><p>
+            Let's take another example of a common programming construct: a class definition. In Java, this is a class definition
+            <pre>
+              <code>
+                public class MyClass {
+                  private final int index;
+                  private final String name;
+                  public MyClass(int index, String name) {
+                    this.index = index;
+                    this.name = name;
+                  }
+                }
+              </code>
+            </pre>
+            The <em>exact</em> same representation is given in Scala by 
+            <pre>
+              <code>
+                class MyClass(index: Int, name: String)
+              </code>
+            </pre>
+          </p></li>
           <li><p>Donec sed odio dui.. Etiam porta sem malesuada magna mollis euismod.. Nullam id dolor id nibh ultricies vehicula ut id elit.. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.. Praesent commodo cursus magna, vel scelerisque nisl consectetur et..</p></li>
           <li><p>Donec sed odio dui.. Etiam porta sem malesuada magna mollis euismod.. Nullam id dolor id nibh ultricies vehicula ut id elit.. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.. Praesent commodo cursus magna, vel scelerisque nisl consectetur et..</p></li>
         </ul>
