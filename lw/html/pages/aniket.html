@@ -21,20 +21,47 @@
 
   <body>
 
-    <div class="navbar navbar-inverse navbar-fixed-top">
-      <div class="navbar-inner">
-        <div class="container">
-          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target="..nav-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="brand" href="#">Aniket</a>
-          <div class="nav-collapse collapse">
-          </div><!--/..nav-collapse -->
-        </div>
-      </div>
-    </div>
+        <div class="navbar-wrapper">
+      <!-- Wrap the .navbar in .container to center it within the absolutely positioned parent. -->
+      <div class="container">
+
+        <div class="navbar navbar-inverse">
+          <div class="navbar-inner">
+            <!-- Responsive Navbar Part 1: Button for triggering responsive navbar (not covered in tutorial). Include responsive CSS to utilize. -->
+            <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="brand" href="../index.html">Team Cod &middot; Aniket</a>
+
+            <div class="nav-collapse collapse">
+              <ul class="nav">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="./tutorials.html">Tutorials</a></li>
+                <li><a href="./programs.html">Programs</a></li>
+
+                <li class="dropdown active">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Language Info   <b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                    <li class="divider"></li>
+                    <li ><a href="./reuben.html">Reuben</a></li>
+                    <li class="divider"></li>
+                    <li><a href="./jason.html">Jason</a></li>
+                    <li class="divider"></li>
+                    <li><a href="./anh.html">Anh</a></li>
+                    <li class="divider"></li>
+                    <li class="active"><a href="./aniket.html">Aniket</a></li>
+                    <li class="divider"></li>
+                  </ul>
+                </li>
+              </ul>
+            </div><!--/.nav-collapse -->
+          </div><!-- /.navbar-inner -->
+        </div><!-- /.navbar -->
+
+      </div> <!-- /.container -->
+    </div><!-- /.navbar-wrapper -->
 
     <div class="container">
        <div class="well well-large">
@@ -78,6 +105,11 @@
         <p>Donec sed odio dui.. Etiam porta sem malesuada magna mollis euismod.. Nullam id dolor id nibh ultricies vehicula ut id elit.. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.. Praesent commodo cursus magna, vel scelerisque nisl consectetur et..</p>
       </div>
     </div>
+
+      <footer style="padding-top:2cm;">
+        <p class="pull-right"><a href="#">Back to top</a></p>
+        <p>&copy; 2013 Team Cod </a></p>
+      </footer>
       
     </div> <!-- /container -->
 
