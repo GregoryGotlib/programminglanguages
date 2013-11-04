@@ -18,6 +18,14 @@
 
     <!-- Fav and touch icons -->
   </head>
+  <style>
+    .tab {
+      text-indent:50px;
+    }
+    .doubletab {
+      text-indent:100px;
+    }
+  </style>
 
   <body>
         <div class="navbar-wrapper marketing">
@@ -37,14 +45,27 @@
             <div class="nav-collapse collapse">
               <ul class="nav">
                 <li><a href="../index.html">Home</a></li>
-                <li class="active"><a href="./tutorials.html">Tutorials</a></li>
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Tutorials   <b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                    <li class="divider"></li>
+                    <li><a href="./tutorials.html#gettingStarted">Getting Started</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#">Another tutorial</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#">Another tutorial</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#">Another tutorial</a></li>
+                    <li class="divider"></li>
+                  </ul>
+                </li>
                 <li><a href="./programs.html">Programs</a></li>
 
                 <li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown">Language Info   <b class="caret"></b></a>
                   <ul class="dropdown-menu">
                     <li class="divider"></li>
-                    <li><a href="./Tutorials.html">Tutorials</a></li>
+                    <li><a href="./reuben.html">Reuben</a></li>
                     <li class="divider"></li>
                     <li><a href="./jason.html">Jason</a></li>
                     <li class="divider"></li>
@@ -64,7 +85,62 @@
 
     <div class="container marketing">
       <p></p>
-      <h1>Tutorials go here</h1>
+      <h1 id="gettingStarted">Getting Started With Scala</h1>
+      <div class="well">
+        <h3>Linux</h3>
+          <ul>
+            <li><p>
+              Download the Scala source code, from <a href="http://www.scala-lang.org/download/2.8.1.final.html">Scala's website</a>
+            </p></li>
+            <li><p>
+              Unpack the tgz file using <code>$ tar -zxvf scalaDistro</code>
+            </p></li>
+            <li><p>
+              Add an environment variable with the Scala path directory <code>$ export SCALA_HOME=/path/to/scala/distro</code>
+            </p></li>
+            <li><p>
+              Add the Scala bin directory to your path with <code>$ PATH=$PATH:$SCALA_HOME</code>
+            </p></li>
+            <li><p>
+              Ensure that everything works by using <code>$ scala -version</code>
+            </p></li>
+          </ul>
+      </div>
+      <div class="well">
+        <h3>Mac</h3>
+          <ul>
+            <li><p>
+              Download the Scala source code, from <a href="http://www.scala-lang.org/download/2.8.1.final.html">Scala's website</a>
+            </p></li>
+            <li><p>
+              Unpack the tgz file using <code>$ tar -zxvf scalaDistro</code>
+            </p></li>
+            <li><p>
+              Add an environment variable with the Scala path directory <code>$ export SCALA_HOME=/path/to/scala/distro</code>
+            </p></li>
+            <li><p>
+              Add the Scala bin directory to your path with <code>$ PATH=$PATH:$SCALA_HOME</code>
+            </p></li>
+            <li><p>
+              Ensure that everything works by using <code>$ scala -version</code>
+            </p></li>
+          </ul>
+      </div>
+      <div class="well">
+        <h3>Windows</h3>
+          <ul>
+            <li><p>
+              Download the Scala source code, from <a href="http://www.scala-lang.org/download/2.8.1.final.html">Scala's website</a>
+            </p></li>
+            <li><p>
+              Realize that Windows is not good for development, reformat, download and install <a src="http://www.ubuntu.com/pre-download">Ubuntu</a> 
+            </p></li>
+            <li><p>
+              Send an email thanking the creators of this website for showing you the awesomeness of Ubuntu then click <a href="#gettingStarted">here</a> to see the install instructions for Ubuntu.
+            </p></li>
+            </ul>
+      </div>
+
 
       <footer style="padding-top:2cm;">
         <p class="pull-right"><a href="#">Back to top</a></p>

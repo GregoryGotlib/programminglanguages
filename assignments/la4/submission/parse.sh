@@ -17,7 +17,9 @@ BEGIN {
             len = length($6)
             $6 = substr($6, 2, len - 2)
         }
+	}
 #		subdivison price issue date lots block
+$3 ~ /ingle/	{
 		printf "<tr>"
 		printf "<td style=\"padding-left:5em\">%s</td>", $5
 		printf "<td style=\"padding-left:5em\">%s</td>", $8
