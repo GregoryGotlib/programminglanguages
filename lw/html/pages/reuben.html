@@ -75,13 +75,8 @@
             One of the cooler things about Scala is that it brings the advantages of functional programming into the object oriented arena that many developers are already familiar with, making functional programming a viable option for production code in industry. Big name companies that have recognized this and begun to utilize Scala in their businesses are names that you are most certainly familiar with: Twitter, LinkedIn and Intel to name a few.   
           </p></li>
           <li><p>
-            Another functional aspect of Scala is that it allows the programmer to decide whether they want to write a function to be imperative (producing side effects) or to be functional (producing no side effects). Just as Java's <code>String</code>'s are immutable and string manipulation could be considered functional in that there are no side effects on the original string, Scala implements many data types that are immutable, providing this same functionality to objects like lists, tuples, maps and sets.
+            Another functional aspect of Scala is that it allows the programmer to decide whether they want to write a function (or an object for that matter) to be imperative (producing side effects) or to be functional (producing no side effects). Just as Java's <code>String</code>'s are immutable and string manipulation could be considered functional in that there are no side effects on the original string, Scala implements many data types that are immutable, providing this same functionality to objects like lists, tuples, maps and sets.
           </p></li>
-          <li><p>
-            Donec sed odio dui.. Etiam porta sem malesuada magna mollis euismod.. Nullam id dolor id nibh ultricies vehicula ut id elit.. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.. Praesent commodo cursus magna, vel scelerisque nisl consectetur et..
-          </p></li>
-        </ul>
-        <p>Donec sed odio dui.. Etiam porta sem malesuada magna mollis euismod.. Nullam id dolor id nibh ultricies vehicula ut id elit.. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.. Praesent commodo cursus magna, vel scelerisque nisl consectetur et..</p>
       </div>
     </div>
       
@@ -104,12 +99,32 @@
         <h1>Polymorphism</h1>
         <p class="lead">Scala's designers took quite a bit of time developing their object orientation and inheritance paradigms and the power that they give the programmer is quite immense. Notions that can be valuable but have significant drawbacks, like multiple inheritance, are implemented in Scala in a way that prevents the horrors of their predecessors.</p>
         <ul>
-          <li><p>Instead of interfaces and abstract classes, Scala uses the notion of <code>Traits</code>. A trait is similar to an abstract class in that it allows the definition of unimplemented or fully implemented methods along fields. When objects are created, the different traits that it posses are combined using what the Scala designers call "mixin composition" which takes the members of a class and adds the members of its traits to it.</p></li>
-          <li><p>Donec sed odio dui.. Etiam porta sem malesuada magna mollis euismod.. Nullam id dolor id nibh ultricies vehicula ut id elit.. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.. Praesent commodo cursus magna, vel scelerisque nisl consectetur et..</p></li>
-          <li><p>Donec sed odio dui.. Etiam porta sem malesuada magna mollis euismod.. Nullam id dolor id nibh ultricies vehicula ut id elit.. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.. Praesent commodo cursus magna, vel scelerisque nisl consectetur et..</p></li>
-          <li><p>Donec sed odio dui.. Etiam porta sem malesuada magna mollis euismod.. Nullam id dolor id nibh ultricies vehicula ut id elit.. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.. Praesent commodo cursus magna, vel scelerisque nisl consectetur et..</p></li>
+          <li><p>Scala does utilize a traditional inheritance structure and it does so through the use of its abstract classes. A class must be defined as abstract if there are to be any subclasses of it. This brings about an interesting implication: the inheritance design of a software system must be well thought out before embarking upon it because you can't extend any old object.</p></li>
+          <li><p>Along with Scala's abstract classes, Scala uses the notion of <code>Traits</code>. A trait is similar to an Java's abstract classes in that it allows the definition of unimplemented or fully implemented methods along fields. When objects are created, the different traits that it posses are combined using what the Scala designers call "mix in composition" which takes the members of a class and adds the members of its traits to it.</p></li>
+          <li><p>In my opinion, after doing research on Scala, traits seemed like the far more interesting aspect of Polymorphism found in Scala. Scala allows the programmer to mix in multiple traits to a single object, similarly to how Java allows an object to implement multiple interfaces. This is noteworthy because in Java, a class can only directly inherit from a single abstract class and implement from as many interfaces as it desires <em>but</em> in Scala a class can be mixed with as many traits as the programmer desires, offering a powerful combination of implemented and unimplemented methods as well as fields. Traits also offer the <em>is-a</em> relationship to classes that extend them.</p></li>
+          <li><p>Traits can also modify the effects of other traits. For instance, a trait <code>A</code> can extend an abstract class <code>B</code> that defines an unimplemented method. In the definition for <code>A</code>, it can implement <code>B</code>'s method and provide some modification to it. Take the following example of a trait for a queue of integers. 
+            <pre>
+              <code>
+                abstract class IntQueue {
+                    def get(): Int
+                    def put(x: Int)
+                }
+              </code>
+            </pre>
+            <p>If for some reason we wanted the queue to double the elements it contains as they were being entered, we could use this trait.</p>
+            <pre>
+              <code>
+                trait Doubling extends IntQueue {
+                    abstract override def put(x: Int) { super.put(2 * x) }
+                }                      
+              </code>
+            </pre> 
+            <p>
+              This is useful in that <code>Doubling</code> modifies its superclass' method and, since multiple traits can be applied to one object, the same function in one class can be augmented by the different traits that it has so that it becomes a rich, robust call that can do error checking, sanitation and normalization all in a single call.
+            </p>
+          </p></li>
         </ul>
-        <p>Donec sed odio dui.. Etiam porta sem malesuada magna mollis euismod.. Nullam id dolor id nibh ultricies vehicula ut id elit.. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.. Praesent commodo cursus magna, vel scelerisque nisl consectetur et..</p>
+        <p></p>
       </div>
     </div>
 
@@ -161,10 +176,25 @@
               </code>
             </pre>
           </p></li>
-          <li><p>Donec sed odio dui.. Etiam porta sem malesuada magna mollis euismod.. Nullam id dolor id nibh ultricies vehicula ut id elit.. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.. Praesent commodo cursus magna, vel scelerisque nisl consectetur et..</p></li>
-          <li><p>Donec sed odio dui.. Etiam porta sem malesuada magna mollis euismod.. Nullam id dolor id nibh ultricies vehicula ut id elit.. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.. Praesent commodo cursus magna, vel scelerisque nisl consectetur et..</p></li>
-        </ul>
-        <p>Donec sed odio dui.. Etiam porta sem malesuada magna mollis euismod.. Nullam id dolor id nibh ultricies vehicula ut id elit.. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.. Praesent commodo cursus magna, vel scelerisque nisl consectetur et..</p>
+          <li><p>
+            Scala offers a construct called "pattern matching" which are similar to the switch statement in Java. In Java 1.7, the only values that can be switched upon are <code>int</code>'s and <code>String</code>'s, in Scala <em>classes</em> can be used for matching and, because of the functional nature of Scala, the case can result to a function stored in a variable, leading to very powerful and concise statements.
+            <p>Take the following code for example</p>
+            <pre>
+              <code>
+                def parseArgument(arg: Any) = arg match {
+                    case "-h" | "--help" => displayHelp
+                    case "-v" | "--version" => displayVerion
+                    case i:Int | d:Double => "Numbers cannot be passed as arguments"
+                    case _ => unknownArgument(_)
+                }
+              </code>
+            </pre>
+            <p>
+              Instead of having a complicated and deeply nested series of if's and else's to parse arguments to a program, this pattern matching sequence handles arguments gracefully. Let's walk through this one to illustrate its power.
+              Notice that the function is defined to take an <code>Any</code> which is analagous to <code>Object</code> in Java, so this is a fully general function and, as its first case, it checks to see if <code>arg</code> is the string "-h" without doing any <code>instanceof</code> type checking, or concern for "Cannot cast X to Y" exceptions. The second case is similar to the first. The third, however, is very unique as it is actually checking to see which type the argument belonged to (assuming that all arguments are not strings).
+              <p>The power of this pattern matching is astounding.</p>
+            </p> 
+          </p></li>
       </div>
     </div>
 
