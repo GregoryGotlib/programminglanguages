@@ -18,17 +18,9 @@
 
     <!-- Fav and touch icons -->
   </head>
-  <style>
-    .tab {
-      text-indent:50px;
-    }
-    .doubletab {
-      text-indent:100px;
-    }
-  </style>
 
-  <body>
-        <div class="navbar-wrapper marketing">
+  <body onload="prettyPrint()">
+        <div class="navbar-wrapper">
       <!-- Wrap the .navbar in .container to center it within the absolutely positioned parent. -->
       <div class="container marketing">
 
@@ -51,7 +43,7 @@
                     <li class="divider"></li>
                     <li><a href="./tutorials.html#gettingStarted">Getting Started</a></li>
                     <li class="divider"></li>
-                    <li><a href="#">Another tutorial</a></li>
+                    <li><a href="./tutorials.html#helloWorld">Hello World</a></li>
                     <li class="divider"></li>
                     <li><a href="#">Another tutorial</a></li>
                     <li class="divider"></li>
@@ -61,11 +53,11 @@
                 </li>
                 <li><a href="./programs.html">Programs</a></li>
 
-                <li class="dropdown">
+                <li class="dropdown active">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown">Language Info   <b class="caret"></b></a>
                   <ul class="dropdown-menu">
                     <li class="divider"></li>
-                    <li><a href="./reuben.html">Reuben</a></li>
+                    <li class="active"><a href="./reuben.html">Reuben</a></li>
                     <li class="divider"></li>
                     <li><a href="./jason.html">Jason</a></li>
                     <li class="divider"></li>
@@ -82,8 +74,8 @@
 
       </div> <!-- /.container -->
     </div><!-- /.navbar-wrapper -->
-
-    <div class="container marketing">
+	
+	<div class="container marketing">
       <p></p>
       <h1 id="gettingStarted">Getting Started With Scala</h1>
       <div class="well">
@@ -152,17 +144,39 @@
             </p></li>
             </ul>
       </div>
-
-
+	  
+	  <h1 id="helloWorld">Hello World in the Scala IDE for Eclipse</h1>
+	  <p>Now that you’ve downloaded the Scala IDE for Eclipse, run it and select File > New > Scala Project as shown below:</p>
+	  <img src="../assets/img/NewProjectSmall.png" alt="New Project">
+	  <p>This should open the New Project Wizard. Enter “HelloWorld” into the project name field and click Finish.</p>
+	  <p>Next, in the Package Explorer, right-click the project “HelloWorld” and select New > Scala Object:</p>
+	  <img src="../assets/img/NewObjectSmall.png" alt="New Object">
+	  <p>Now, modify the auto-generated file to read as follows:</p>
+	  
+	  <pre class="prettyprint lang-scala">
+		object HelloWorld {
+			def main(args: Array[String]) {
+				println("Hello, world!")
+			}
+		}
+      </pre>
+	  
+	  <p>Finally, click the run button in the toolbar up top:</p>
+	  <img src="../assets/img/RunButton.png" alt="Run Button">
+	  <br>&nbsp;<br> 
+	  <p>View the results of your program in the console output window at the bottom of the IDE. Congratulations, you’ve created your first Scala program!</p>
+	  
       <footer style="padding-top:2cm;">
         <p class="pull-right"><a href="#">Back to top</a></p>
         <p>&copy; 2013 Team Cod </a></p>
       </footer>
-      
+
     </div> <!-- /container -->
 
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="../assets/js/jquery.js"></script>
     <script src="../assets/js/bootstrap.js"></script>
+    <link href="../assets/js/prettify/prettify.css" type="text/css" rel="stylesheet" />
+    <script type="text/javascript" src="../assets/js/prettify/prettify.js"></script>
   </body>
 </html>

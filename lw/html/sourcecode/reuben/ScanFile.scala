@@ -4,6 +4,7 @@
  */
 import scala.io.Source
 import java.io.PrintWriter
+import scala.language.postfixOps
 
 object ScanFile {
   
