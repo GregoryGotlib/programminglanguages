@@ -41,11 +41,11 @@
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown">Tutorials   <b class="caret"></b></a>
                   <ul class="dropdown-menu">
                     <li class="divider"></li>
-                    <li><a href="./tutorials.html#gettingStarted">Getting Started</a></li>
+                    <li><a href="#gettingStarted">Getting Started</a></li>
                     <li class="divider"></li>
-                    <li><a href="./tutorials.html#helloWorld">Hello World</a></li>
+                    <li><a href="#helloWorld">Hello World</a></li>
                     <li class="divider"></li>
-                    <li><a href="#">Another tutorial</a></li>
+                    <li><a href="#addTwoNumbers">Command Line Arguments</a></li>
                     <li class="divider"></li>
                     <li><a href="#">Another tutorial</a></li>
                     <li class="divider"></li>
@@ -137,15 +137,16 @@
               Download the Scala source code, from <a href="http://www.scala-lang.org/download/2.8.1.final.html">Scala's website</a>
             </p></li>
             <li><p>
-              Realize that Windows is not good for development, reformat, download and install <a src="http://www.ubuntu.com/pre-download">Ubuntu</a> 
+              Realize that Windows is not good for development, reformat, download and install <a href="http://www.ubuntu.com/pre-download">Ubuntu</a> 
             </p></li>
             <li><p>
               Send an email thanking the creators of this website for showing you the awesomeness of Ubuntu then click <a href="#gettingStarted">here</a> to see the install instructions for Ubuntu.
             </p></li>
             </ul>
       </div>
-	  
+
 	  <h1 id="helloWorld">Hello World in the Scala IDE for Eclipse</h1>
+    <div class="well">
 	  <p>Now that you’ve downloaded the Scala IDE for Eclipse, run it and select File > New > Scala Project as shown below:</p>
 	  <img src="../assets/img/NewProjectSmall.png" alt="New Project">
 	  <p>This should open the New Project Wizard. Enter “HelloWorld” into the project name field and click Finish.</p>
@@ -165,10 +166,43 @@
 	  <img src="../assets/img/RunButton.png" alt="Run Button">
 	  <br>&nbsp;<br> 
 	  <p>View the results of your program in the console output window at the bottom of the IDE. Congratulations, you’ve created your first Scala program!</p>
-	  
+  </div>
+
+    <h1 id="addTwoNumbers">Command Line Arguments in Scala</h1>
+    <div class="well">
+    <p>Now, we will learn how to read the command line arguments by a simple program called “addTwoNumbers”</p>
+    <p>First, follow the steps above to create the project addTwoNumbers</p>
+    <p>Modify the auto-generated file to read as follows:</p>
+    
+    <pre class="prettyprint lang-scala">
+        object addTwoNumbers {
+
+           def main(args: Array[String]) 
+           {
+                  println("Adding the first two arguments")
+                  var i: Int=args(0).toInt
+                  var j: Int=args(1).toInt
+                  var sum: Int= i+j
+                  println("The sum of two arguments is " + sum)
+           }
+        }
+      </pre>
+
+    
+    
+    <p> In the example above, the program reads the integers typed in by users as command line arguments. In Scala, command line arguments are stored in array named "args." </p>
+    <p>Note that Scala supports type reference, we can declare variables i, j, and sum as</p>
+    <pre class="prettyprint lang-scala">
+        
+        var i =args(0).toInt
+        var j =args(1).toInt
+        var sum = i+j
+    
+      </pre>
+	      </div> 
       <footer style="padding-top:2cm;">
         <p class="pull-right"><a href="#">Back to top</a></p>
-        <p>&copy; 2013 Team Cod </a></p>
+        <p>&copy; 2013 Team Cod</p>
       </footer>
 
     </div> <!-- /container -->
