@@ -47,7 +47,7 @@
                     <li class="divider"></li>
                     <li><a href="#addTwoNumbers">Command Line Arguments</a></li>
                     <li class="divider"></li>
-                    <li><a href="#">Another tutorial</a></li>
+                    <li><a href="#api">Scala API</a></li>
                     <li class="divider"></li>
                   </ul>
                 </li>
@@ -199,6 +199,90 @@
         var sum = i+j
     
       </pre>
+    </div>
+        <h1 id="api">How to use the Scala API</h1>
+	  <p>The API (Application Programming Interface) is located <a href="http://www.scala-lang.org/api/current/#package">here</a></p>
+      <p> The Scala API documents all Scala classes with associated class methods. You use the API to find different classes that can be used in your programs. 
+		The API will tell you how to use the class and what an object created from that class can do. 
+		Then you can import that class to your program and use it.</p>
+	  <p>By default the API starts at the root package that documents the Scala standard library.</p>
+	  <p>The root package tells you about what is included in important Scala packages like the <FONT FACE="courier">scala</FONT>
+		 package, the <FONT FACE="courier">scala.collection</FONT> package, and the <FONT FACE="courier">scala.io</FONT> package:</p>
+	  <img src="../assets/img/RootPackagePic.png">
+	  <p></p>
+	  <p>On the far left of the Scala API is a scrollable list that contains all Scala classes, Singleton objects, 
+	     and traits organized by the package name. There is also a search bar for easily finding them as well.</p>
+	  <p>A Scala class, Singleton object, and/or trait with the same name are different things. In the scrollable list, 
+	     the letters in the circle(s) next to a name represent a clickable link for the class, Singleton object, 
+		 and/or trait documentation of the name.</p>
+	  <p>For example, a circle with an 'o' next to <FONT FACE="courier">Array</FONT> represents the link to the API of Singleton object <FONT FACE="courier">Array</FONT>. 
+		    A circle with a 'c' also next to <FONT FACE="courier">Array</FONT> represents the link to the API of the class <FONT FACE="courier">Array</FONT>. 
+			A circle with a 't' next to <FONT FACE="courier">Cloneable</FONT> represents the link to the API of the trait <FONT FACE="courier">Cloneable</FONT>.</p>	 
+	  <p>If you are familiar with Java, classes in Scala are just like classes in Java. They are the design for the object. 
+		   Like a design for a car or a house that can be used to create as many houses and cars you want.</p>
+	  <p>The objects in the Scala API are Singleton objects. They are used for invoking Java-like static methods because you 
+		   cannot have static classes, variables, or methods in Scala.</p>
+	  <p>For example, instead of writing a <FONT FACE="courier">Color</FONT> class and then creating an instance of that 
+		   class with a reference variable and running methods like:</p>
+	  <pre class="prettyprint lang-scala">
+			val col = new Color("Blue")
+			col.turnBright()
+	  </pre>
+	  <p>you simply write a <FONT FACE="courier">Color</FONT> Singleton object with defined methods. And you invoke methods like this:</p>
+	  <pre class="prettyprint lang-scala">
+			Color.turnBright()
+	  </pre>
+	  <p>Singleton object methods can also be used in other classes.</p>
+	  <p>Traits are like Interfaces in Java but you can have non-abstract methods in them.
+         Traits are used to add pre-defined methods/variables or method/variable declarations to be defined later to a class that extends them.</p>
+	  <p>Just like Java, a Scala class can extend 1 class but have multiple traits</p>
+	  <p>As a demonstration on how to use the Scala API, let's learn about the <FONT FACE="courier">Queue</FONT> class in the 
+	     <FONT FACE="courier">scala.collection.mutable</FONT> package:</p>
+	  <img src="../assets/img/Scrollable List API pic.png">
+	  <p></p>
+	  <p>We can find the API for the <FONT FACE="courier">Queue</FONT> class by scrolling through the list on the left and find <FONT FACE="courier">Queue</FONT> 
+	     under the <FONT FACE="courier">scala.collection.mutable</FONT> subheading. We then click the circle next to it 
+		 with 'c' on it or just click the name to view the <FONT FACE="courier">Queue</FONT> class API:</p>
+	  <img src="../assets/img/Queue Class Pic.png">
+	  <p></p>
+	  <p>The top of the API for the <FONT FACE="courier">Queue</FONT> class tells us what class <FONT FACE="courier">Queue</FONT> extends and what 
+	     traits it uses.</p>
+      <p>Underneath that, the API tells us the version, supertypes (superclasses), subclasses, and a type hierarchy graphic for the class.</p>
+
+      <p>From the type hierarchy we can easily see that <FONT FACE="courier">Queue</FONT> extends the <FONT FACE="courier">MutableList</FONT> class and implements 4 traits. We can even see what classes extend <FONT FACE="courier">Queue</FONT> as well.</p>
+
+      <p>And all throughout the <FONT FACE="courier">Queue</FONT> API, we can click on all class names, singleton object names, and trait names to be redirected to the API document of the clicked class, singleton object, or trait.</p>
+
+      <p>As we scroll through the API we see all methods <FONT FACE="courier">Queue</FONT> can invoke including the ones inherited from Linear Supertypes going all the way up to the root class <FONT FACE="courier">Any</FONT> and the different traits. We see a description for what each method does, 
+	     what each method returns, and how to invoke them with the proper parameters.</p>
+
+      <p>We can click on the drop down arrow on the upper left corner of a method description box to get more information about the parameters, return types, and other important information:</p>
+	  <img src="../assets/img/drop_down_arrow_pic_api.png">
+	  <p></p>
+	  <p>We can even organize the long list of methods to only show ones that were inherited from certain classes or traits by clicking the appropriate classes or traits whose methods we want to show in this selection box:</p>
+	  <img src="../assets/img/selection_box_api.png">
+	  <p></p>	  
+	  <p>This box also allows us to search for methods as well and change the ordering of the method list from Alphabetic to By Inheritance.</p>
+	  <p>After learning about the <FONT FACE="courier">Queue</FONT> class we can import it into our Scala program using</p>
+	  <pre class="prettyprint lang-scala">
+			import scala.collection.mutable.Queue
+	  </pre>
+	  <p>or</p>
+	  <pre class="prettyprint lang-scala">
+			import scala.collection.mutable._
+	  </pre>
+	  <p>If we want to use all classes, traits, and singleton objects in the <FONT FACE="courier">scala.collection.mutable</FONT> package.</p>
+	  <p>In Scala, the <FONT FACE="courier">import</FONT> statement can go anywhere in the program.</p>
+	  <p>And in every program, Scala implicitly imports <FONT FACE="courier">java.lang</FONT> and <FONT FACE="courier">scala</FONT> packages and the <FONT FACE="courier">Predef</FONT> object.</p>
+      <p>The <FONT FACE="courier">Predef</FONT> object contains many definitions of types, methods, and implicit conversions that are commonly used in Scala programs.</p>
+	  <p>So we don't have to write:</p>
+	  <pre class="prettyprint lang-scala">
+		import java.lang._
+		import scala._
+		import Predef._
+	  </pre>
+	  
+	  <p>Now you know how to use the Scala API :)</p>
 	      </div> 
       <footer style="padding-top:2cm;">
         <p class="pull-right"><a href="#">Back to top</a></p>

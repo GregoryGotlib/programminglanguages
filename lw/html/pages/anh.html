@@ -47,7 +47,7 @@
                     <li class="divider"></li>
                     <li><a href="./tutorials.html#addTwoNumbers">Command line arguments</a></li>
                     <li class="divider"></li>
-                    <li><a href="#">Another tutorial</a></li>
+                    <li><a href="./tutorials.html#api">Scala API</a></li>
                     <li class="divider"></li>
                   </ul>
                 </li>
@@ -76,11 +76,12 @@
     </div><!-- /.navbar-wrapper -->
 
     <div class="container marketing">
-      <div class="well well-large">
-      <div class="row-fluid ">
+      <p>
+      </p>
+              <h1>Type Parametrization </h1>
         <div class="well well-large">
       <div class="row-fluid ">
-        <h1>Type Parametrization </h1>
+
         
         <ul>
           <li><p>
@@ -125,12 +126,13 @@
       </div>
     </div>
       
+      <h1>Interpreter</h1>
     <div class="well well-large">
       <div class="row-fluid">
-        <h1>Interpreter</h1>
+        
         <ul>
           <li><p>
-	     Scala has an Interpreter. It is an interactive shell called scala or REPL( stands  for Read-Evaluate-Print Loop). You can use it by typing scala, at a command prompt:          </p></li>
+	     Scala has an Interpreter. It is an interactive shell called scala or REPL( stands  for Read-Evaluate-Print Loop). The lastest version is included in the scala 2.11.0-m5 package (release date: September, 2013). It is improved with several new commands that ease its usage. In this introduction, we still use version 2.10.0 of the interpreter. You can use it by typing scala, at a command prompt:          </p></li>
 	      <pre class="prettyprint lang-scala">
               <code>
                $scala
@@ -180,16 +182,17 @@
         </ul>
     </div>
     </div>
+    <h1>Casting</h1>
     <div class="well well-large">
       <div class="row-fluid">
-        <h1>Casting</h1>
+        
         <ul>
           <li>
 		  <p>When you want to cast a variable of one primitive type to another primitive type, you can use .toInt, .toDouble, ect. For example, if you want to cast a float  to Int</p>
 		  <pre class="prettyprint lang-scala">
               <code>
 				val aFloat = 1.5f
-				val i : Int = 1.5f.toInt
+				val i : Int = aFloat.toInt
               </code>
             </pre>
 			</p></li>
